@@ -1,0 +1,120 @@
+<html>
+<head> 
+<title>Academic Papers</title>
+<meta name="viewport" content="initial-scale=1.0" />
+<style>
+
+table {
+    border-collapse: collapse;
+}
+
+th, td  {
+    padding: 0;
+}
+    
+body {
+    font-family: Sans-Serif;
+}
+
+</style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://dglittle.github.com/gl519/index.js"></script>
+<script>
+
+var papers = [
+    {
+        "authors" : "Greg Little",
+        "title" : "Programming with Human Computation",
+        "venue" : "PhD Thesis - MIT",
+        "year" : 2011,
+        "pdf" : "PhD Thesis.pdf"
+    },    
+    {
+        "authors" : "Greg Little, Lydia B. Chilton, Max Goldman, and Robert C. Miller",
+        "title" : "Exploring Iterative and Parallel Human Computation Processes",
+        "venue" : "HCOMP",
+        "year" : 2010,
+        "pdf" : "HCOMP2010.pdf"
+    },    
+    {
+        "authors" : "Greg Little, Lydia B. Chilton, Max Goldman, and Robert C. Miller",
+        "title" : "TurKit: Human Computation Algorithms on Mechanical Turk",
+        "venue" : "UIST",
+        "year" : 2010,
+        "pdf" : "TurKitUIST2010.pdf"
+    },    
+    {
+        "authors" : "Greg Little",
+        "title" : "Programming with Keywords",
+        "venue" : "Masters Thesis - MIT",
+        "year" : 2007,
+        "pdf" : "MS Thesis.pdf"
+    },    
+    {
+        "authors" : "Greg Little, and Robert C. Miller",
+        "title" : "Keyword Programming in Java",
+        "venue" : "Journal of ASE",
+        "year" : 2008,
+        "pdf" : "Keyword Programming in Java JASE 2008.pdf"
+    },    
+    {
+        "authors" : "Greg Little, and Robert C. Miller",
+        "title" : "Keyword Programming in Java",
+        "venue" : "ASE",
+        "year" : 2007,
+        "pdf" : "Keyword Programming ASE 2007.pdf"
+    },    
+    {
+        "authors" : "Greg Little, Tessa A. Lau, Allen Cypher, James Lin, Eben M. Haber, and Eser Kandogan",
+        "title" : "Koala: Capture, Share, Automate, Personalize Business Processes on the Web",
+        "venue" : "CHI",
+        "year" : 2007,
+        "pdf" : "Koala CHI 2007.pdf"
+    },    
+    {
+        "authors" : "Greg Little, and Robert C. Miller",
+        "title" : "Translating Keyword Commands into Executable Code",
+        "venue" : "UIST",
+        "year" : 2006,
+        "pdf" : "Keyword Commands UIST 2006.pdf"
+    },    
+    {
+        "authors" : "Robert D. Carr, Goran Konjevod, Greg Little, Venkatesh Natarajan and Ojas Parekh",
+        "title" : "Compacting Cuts: A New Linear Formulation for Minimum Cut",
+        "venue" : "TALG",
+        "year" : 2009,
+        "pdf" : "TALG.pdf"
+    },    
+    {
+        "authors" : "Robert D. Carr, Goran Konjevod, Greg Little, Venkatesh Natarajan and Ojas Parekh",
+        "title" : "Compacting Cuts: A New Linear Formulation for Minimum Cut",
+        "venue" : "SODA",
+        "year" : 2007,
+        "pdf" : "Compacting Cuts SODA 2007.pdf"
+    },    
+    {
+        "authors" : "Greg Little, Sreekar Krishna, John Black and Sethuraman Panchanathan",
+        "title" : "A Methodology for Evaluating Robustness of Face Recognition Algorithms with Respect to Variations in Pose Angle and Illumination Angle",
+        "venue" : "ICASSP",
+        "year" : 2005,
+        "pdf" : "Face Recognition ICASSP 2005.pdf"
+    }
+]
+
+$(function () {
+    var d = $('<div/>')
+    d.append('<h3>academic papers</h3>')
+    var ul = $('<ul></ul>')
+    _.each(papers, function (e) {
+        ul.append('<li style="margin-bottom:8px"><a style="text-decoration:none" href="' + _.escapeXml(e.pdf) + '">' + _.escapeXml(e.title) + '</a><br><small style="color:grey">' + _.escapeXml(e.authors) + '. <i>' + _.escapeXml(e.venue + ', ' + e.year) + '</i></small></li>')
+    })
+    d.append(ul)
+
+    $('body').append(d)
+})
+
+</script>
+</body>
+</html>
